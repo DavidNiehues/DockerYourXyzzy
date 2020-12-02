@@ -29,14 +29,6 @@ services:
       - POSTGRES_USER=pyx
       - POSTGRES_PASSWORD=CorrectHorseBatteryStaple
 
-  ngrok:
-    image: wernight/ngrok:latest
-    networks:
-      - pyx-net
-    ports:
-      - "4040:4040"
-    environment:
-      - NGROK_PORT=pyx:8080
 
 networks:
   pyx-net:
