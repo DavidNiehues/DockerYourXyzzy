@@ -11,12 +11,7 @@ services:
       - .pyx:/app
     networks:
       - pyx-net
-    environment:
-      - TOMCAT_USER=tomcat_user
-      - TOMCAT_PASSWORD=tomcat_password
-      - DB_NAME=pyx
-      - DB_USER=pyx
-      - DB_PASSWORD=CorrectHorseBatteryStaple
+    env_file: .env
 
   postgres:
     image: "postgres:alpine"
@@ -25,11 +20,7 @@ services:
       - ./init-db.d:/docker-entrypoint-initdb.d
     networks:
       - pyx-net
-    environment:
-      - POSTGRES_DB=pyx
-      - POSTGRES_USER=pyx
-      - POSTGRES_PASSWORD=CorrectHorseBatteryStaple
-
+    env_file: .env
 
 networks:
   pyx-net:

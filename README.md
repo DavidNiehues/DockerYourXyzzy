@@ -27,7 +27,8 @@ The PYX project can be used in Docker format for development, outputting the bui
 
 ## Run with Docker-Compose (fastest)
 
-An example stack of PYX with a Postgres database and an [Ngrok](https://ngrok.com/) tunnel can be found in [docker-compose.yml](./docker-compose.yml):
+An example stack of PYX with a Postgres database and an [Ngrok](https://ngrok.com/) tunnel can be found in [docker-compose.yml](./docker-compose.yml). Before running it, you need to create the file `.env`. You can use the provided `.env.example` as a template.
+After creating `.env`, run the stack as follows:
 
 ```sh
 # Run PYX/Postgres stack
