@@ -24,13 +24,13 @@ ADD scripts/entrypoint.sh /
 RUN dos2unix /entrypoint.sh
 
 # PYX
-ENV GIT_BRANCH master
+ENV GIT_BRANCH cac
 VOLUME /app /output
 
 # OVERRIDE:
 # Specify geoip2 version until https://github.com/ajanata/PretendYoureXyzzy/pull/228
 RUN apk --no-cache add git openssh \
- && git clone -b $GIT_BRANCH https://github.com/ajanata/PretendYoureXyzzy.git /project \
+ && git clone -b $GIT_BRANCH https://github.com/DavidNiehues/PretendYoureXyzzy.git /project \
  && cd project \
  && cp build.properties.example build.properties \
  && cp build.properties.example build.properties.a \
